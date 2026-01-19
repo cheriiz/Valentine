@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry keeru papa.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Comfortaa Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comfortaa', cursive;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 340px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      animation: fadeIn 1.8s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .signature {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 16px;
+      color: #e91e63;
+      font-weight: 600;
+      z-index: 3;
+    }
+
+    .heart {
+      position: fixed;
+      color: #e91e63;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Sorry keeru papa.</h1>
+    <p>
+      sorry nannaa<br>
+      inkosari ala cheyanu nannaa.
+    </p>
+  </div>
+
+  <div class="signature">- ni cheri babu.</div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart,
